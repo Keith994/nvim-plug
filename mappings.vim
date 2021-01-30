@@ -48,14 +48,16 @@ nnoremap < <<
 nnoremap > >>
 
 " ===
-" === Insert Mode Cursor Movement, emacs style 
+" === Insert Mode Cursor Movement, Emacs Style 
 " ===
-inoremap <C-a> <ESC>I
-inoremap <C-e> <ESC>A
-inoremap <C-f> <ESC>la
-inoremap <C-b> <ESC>i
-inoremap <C-p> <ESC>ki
-inoremap <C-n> <ESC>ji
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+inoremap <M-f> <S-Right>
+inoremap <M-b> <S-Left>
 
 " Call figlet
 noremap tx :r !figlet 
@@ -397,20 +399,3 @@ func! CompileRunGcc()
 		:term go run .
 	endif
 endfunc
-
-source ~/.config/nvim/which-key.vim
-
-" ===
-" === any-jump
-" === 符号跳转
-"nnoremap <leader>sj :AnyJump<CR>
-" Visual mode: jump to selected text in visual mode
-"xnoremap <leader>sj :AnyJumpVisual<CR>
-
-" ===
-" === vim-table-mode
-" ===
-" === 表格制作，使用| - + ，按两次|可以自动完成一行
-" === 只在text文件，md文件，vim-plug文件生效
-"noremap <Leader>tm :TableModeToggle<CR>
-"let g:table_mode_disable_mappings = 1

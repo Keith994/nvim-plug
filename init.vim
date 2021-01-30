@@ -9,6 +9,7 @@
 source ~/.config/nvim/plug-install.vim
 source ~/.config/nvim/general-setting.vim
 source ~/.config/nvim/mappings.vim
+source ~/.config/nvim/which-key.vim
 source ~/.config/nvim/themes/oceanicnext.vim
 
 " source plug-config directory
@@ -36,6 +37,7 @@ source ~/.config/nvim/plug-config/dart.vim
 source ~/.config/nvim/plug-config/vimspector.vim
 source ~/.config/nvim/plug-config/illuminate.vim
 source ~/.config/nvim/plug-config/AsyncTasks.vim
+source ~/.config/nvim/plug-config/AutoPairs.vim
 source ~/.config/nvim/plug-config/fzf-ignore.vim
 source ~/.config/nvim/plug-config/vim-easymotion.vim
 source ~/.config/nvim/plug-config/vim-rooter.vim
