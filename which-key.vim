@@ -4,18 +4,18 @@
 " ===
 call which_key#register('<Space>', "g:which_key_map")
 call which_key#register(',', "g:which_key_local_map")
-nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
-vnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader>      :<c-u>WhichKeyVisual '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
+vnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
 
 " Create map to add keys to
-let g:which_key_map =  {}
-let g:which_key_local_map = {}
+let g:which_key_map                      = {}
+let g:which_key_local_map                = {}
 
 " Not a fan of floating windows for this
-let g:which_key_use_floating_win = 0
-let g:which_key_max_size = 0
+let g:which_key_use_floating_win         = 0
+let g:which_key_max_size                 = 0
 
 " Hide status line
 autocmd! FileType which_key
@@ -27,12 +27,12 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 noremap <silent> <LEADER><CR> :nohlsearch<CR>
 
 " Single mappings
-let g:which_key_map['<CR>'] = 'no-highlight'
-let g:which_key_map['/'] = 'open-terminal'
-let g:which_key_map['r'] = 'run-current-file'
-let g:which_key_map['u'] = 'undo-tree'
-let g:which_key_map['='] = 'balance-windows'
-let g:which_key_map['y'] = 'yank-from-history'
+let g:which_key_map['<CR>']    = 'no-highlight'
+let g:which_key_map['/']       = 'open-terminal'
+let g:which_key_map['r']       = 'run-current-file'
+let g:which_key_map['u']       = 'undo-tree'
+let g:which_key_map['=']       = 'balance-windows'
+let g:which_key_map['y']       = 'yank-from-history'
 let g:which_key_map['<space>'] = 'current-directory'
 
 function s:ignore_window_switch()
@@ -127,9 +127,9 @@ command! NvimPath call <SID>nvim_path()
 
 let g:which_key_map.f = {
 			\ 'name' : '+file'     ,
-			\ 'f'    : ["Files"    , 'search file']    ,
-			\ 'y'    : ["FilePath" , 'yank file path'] ,
-			\ 'p'    : ['NvimPath' , 'edit nvim file'] ,
+			\ 'f'    : ["Files"    , 'search file'    ] ,
+			\ 'y'    : ["FilePath" , 'yank file path' ] ,
+			\ 'p'    : ['NvimPath' , 'edit nvim file' ] ,
 			\}
 
 " ===
@@ -157,9 +157,9 @@ command! OpenLazyGit call Open_LazyGit()
 
 let g:which_key_map.o = {
 			\ 'name' : '+open'         ,
-			\ 't'    : ['OpenTerminal' , 'open-term']         ,
-			\ 'p'    : ['OpenExplorer' , 'open-file-sidebar'] ,
-			\ 'l'    : ['OpenLazyGit'  , 'open-lazygit']      ,
+			\ 't'    : ['OpenTerminal' , 'open-term'         ] ,
+			\ 'p'    : ['OpenExplorer' , 'open-file-sidebar' ] ,
+			\ 'l'    : ['OpenLazyGit'  , 'open-lazygit'      ] ,
 			\}
 
 " ===

@@ -219,7 +219,7 @@ endfunc
 " ===
 " === vim-visual-multi
 " ===
-" let g:VM_leader                     = {'default': ',', 'visual': ',', 'buffer': ','}
+" let g:VM_leader                   = {'default': ',', 'visual': ',', 'buffer': ','}
 let g:VM_maps                       = {}
 let g:VM_custom_motions             = {'H': '0', 'L': '$'}
 let g:VM_maps['i']                  = 'i'
@@ -230,7 +230,7 @@ let g:VM_maps['Find Next']          = ''
 let g:VM_maps['Find Prev']          = ''
 let g:VM_maps['Remove Region']      = 'q'
 let g:VM_maps['Skip Region']        = '<c-n>'
-"let g:VM_maps["Undo"]               = 'l'
+"let g:VM_maps["Undo"]              = 'l'
 let g:VM_maps["Redo"]               = '<C-r>'
 
 " ===
@@ -269,17 +269,13 @@ cnoreabbrev sw w suda://%
 " === rnvimr
 " ===
 let g:rnvimr_action = {
-			\ 'T': 'NvimEdit tabedit',
-			\ 'S': 'NvimEdit split',
-			\ 'V': 'NvimEdit vsplit',
-			\ 'gw': 'JumpNvimCwd',
-			\ 'yw': 'EmitRangerCwd'
+			\ 'T'  : 'NvimEdit tabedit' ,
+			\ 'S'  : 'NvimEdit split'   ,
+			\ 'V'  : 'NvimEdit vsplit'  ,
+			\ 'gw' : 'JumpNvimCwd'      ,
+			\ 'yw' : 'EmitRangerCwd'    ,
 			\ }
 
-" ===
-" === tcomment_vim
-" ===
-let g:tcomment_maps=0
 " 注释
 " nmap <LEADER>cn g>c
 " vmap <LEADER>cn g>
@@ -305,24 +301,28 @@ omap ac <Plug>(coc-classobj-a)
 
 " Useful commands
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
-nmap <silent> gd <Plug>(coc-definition)      " 去到所在定义
-nmap <silent> gD <Plug>(coc-type-definition) " 去到变量的所在类型定义
-nmap <silent> gi <Plug>(coc-implementation)  " 去到所在实现
-nmap <silent> gr <Plug>(coc-references)      " 引用
-nmap <silent> gR <Plug>(coc-rename)          " 重命名变量
-"nmap <leader>rn <Plug>(coc-rename)           " 重命名变量
+" 去到所在定义
+nmap <silent> gd <Plug>(coc-definition)
+" 去到变量的所在类型定义
+nmap <silent> gD <Plug>(coc-type-definition)
+" 去到所在实现
+nmap <silent> gi <Plug>(coc-implementation)
+" 引用
+nmap <silent> gr <Plug>(coc-references)
+" 重命名变量
+nmap <silent> gR <Plug>(coc-rename)
 
 " coctodolist
 "" CocTodoList创建
-nnoremap <leader>tn :CocCommand todolist.create<CR>
+nnoremap <leader>tn         :CocCommand todolist.create<CR>
 " 显示查找TodoList
-nnoremap <leader>ts :CocList todolist<CR>
+nnoremap <leader>ts         :CocList todolist<CR>
 " 更新TodoList
-nnoremap <leader>tu :CocCommand todolist.download<CR>:CocCommand todolist.upload<CR> 
-" coc-tasks
-noremap <silent> <leader>tt :CocList tasks<CR>                                       " Task显示查找
-
-nnoremap <c-c> :CocCommand<CR>                     " Coc的所有命令
+nnoremap <leader>tu         :CocCommand todolist.download<CR>:CocCommand todolist.upload<CR>
+" coc-tasks Task显示查找
+noremap  <leader>tt         :CocList tasks<CR>
+" Coc的所有命令
+nnoremap <c-c>							:CocCommand<CR>
 "nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 "nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 "nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
@@ -350,12 +350,6 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-" ===
-" === flutter setting
-" ===
-let g:flutter_default_device = 'emulator-5554'
-
 
 " Compile function
 noremap <LEADER>r :call CompileRunGcc()<CR>

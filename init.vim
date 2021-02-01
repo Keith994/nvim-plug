@@ -19,9 +19,12 @@ source ~/.config/nvim/plug-config/GitGutter.vim
 source ~/.config/nvim/plug-config/Agit.vim
 source ~/.config/nvim/plug-config/xtabline.vim
 source ~/.config/nvim/plug-config/coc.vim
+source ~/.config/nvim/plug-config/flutter.vim
+source ~/.config/nvim/plug-config/tcomment.vim
 source ~/.config/nvim/plug-config/vim-instant-markdown.vim
 source ~/.config/nvim/plug-config/vim-markdown-toc.vim
 source ~/.config/nvim/plug-config/bullets.vim
+source ~/.config/nvim/plug-config/emmet.vim
 source ~/.config/nvim/plug-config/fzf.vim
 source ~/.config/nvim/plug-config/fzf-preview.vim
 source ~/.config/nvim/plug-config/vista.vim
