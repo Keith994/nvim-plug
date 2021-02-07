@@ -32,6 +32,7 @@ function! StartifyEntryFormat()
 let g:startify_bookmarks = [
             \ { 'c': '~/.config/bspwm/bspwmrc' },
             \ { 'i': '~/.config/nvim/init.vim' },
+            \ { 's': '~/.config/sxhkd/sxhkdrc' },
             \ { 'z': '~/.zshrc' },
             \ '~/Github',
             \ ]

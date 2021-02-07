@@ -34,6 +34,11 @@ Plug 'pechorin/any-jump.vim' " 光标下的变量自动跳转
 Plug 'liuchengxu/vista.vim' " 在Vim / NeoVim中查看和搜索LSP符号，标签
 " Debugger
 Plug 'puremourning/vimspector', {'do': './install_gadget.py --enable-c --enable-python --enable-go'}  " Vim的多语言图形调试器
+" Syntax Checker
+Plug 'dense-analysis/ale'
+" Plug 'vim-syntastic/syntastic'
+" Syntax Highlight
+Plug 'sheerun/vim-polyglot'
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Snippets
@@ -42,7 +47,7 @@ Plug 'theniceboy/vim-snippets' " 代码片断
 Plug 'mbbill/undotree' " undo树，可视化重做
 " Git
 Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
-Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }
+" Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter' " 在sign列中显示git diff。
 Plug 'cohama/agit.vim' " git日志查看
 Plug 'tpope/vim-fugitive' " 命令行git
@@ -50,7 +55,8 @@ Plug 'tpope/vim-fugitive' " 命令行git
 Plug 'Chiel92/vim-autoformat'
 " CSharp
 Plug 'OmniSharp/omnisharp-vim'
-Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] } " omnisharp-vim dependency
+Plug 'nickspoons/vim-sharpenup'
+" Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] } " omnisharp-vim dependency
 " HTML, CSS, JavaScript, Typescript, PHP, JSON, etc.
 Plug 'othree/html5.vim' " HTML5 +内联SVG全功能，Vim的缩进和语法。
 Plug 'alvan/vim-closetag' " 自动关闭（X）HTML标签

@@ -4,26 +4,42 @@
 let g:lightline = {
 			\ 'colorscheme': 'oceanicnext',
 			\ 'active' : {
-				\ 'left' : [[ 'winnr'],[ 'mode', 'paste' ],
-								\ ['readonly', 'filename', 'modified'], ['gitbranch'], ['gitstatus' ],['method' ]],
-								\ 'right': [ [ 'fsize'],['lineinfo'], ['CocStatus', 'filetype' ]],
+			\ 'left' : [[ 'winnr'],[ 'mode', 'paste' ],
+			\ ['readonly', 'filename', 'modified'], ['gitbranch'], ['gitstatus' ],['method' ]],
+			\ 'right': [ [ 'fsize'],['lineinfo'], [ 'linterstatus', 'sharpenup', 'filetype' ]],
 			\ },
 			\ 'inactive' : {
-				\ 'left': [ ['winnr'], ['filename'] ],
-				\ 'right': [ [ 'lineinfo', 'percent' ] ]
-				\},
+			\ 'left': [ ['winnr'], ['filename'] ],
+			\ 'right': [ [ 'lineinfo', 'percent' ] ]
+			\},
 			\ 'component': {
-				\   'lineinfo': ' %l/%L:%c',
-				\ },
+			\   'lineinfo': ' %l/%L:%c',
+			\   'sharpenup': sharpenup#statusline#Build()
+			\ },
 			\ 'component_function': {
-				\ 'readonly': 'LightlineReadonly',
-				\ 'gitstatus': 'LightlineGitStatus',
-				\ 'gitbranch':  'LightGitBranch',
-				\ 'fsize': 'LightlineFsize',
-			  \ 'method': 'NearestMethodOrFunction',
-				\ 'CocStatus': 'CocStatus_k',
-				\ },
+			\ 'linterstatus' : 'LinterStatus',
+			\ 'readonly'     : 'LightlineReadonly',
+			\ 'gitstatus'    : 'LightlineGitStatus',
+			\ 'gitbranch'    : 'LightGitBranch',
+			\ 'fsize'        : 'LightlineFsize',
+			\ 'method'       : 'NearestMethodOrFunction',
+			\ 'CocStatus'    : 'CocStatus_k',
+			\ },
 			\ }
+
+function! LinterStatus() abort
+	let l:counts = ale#statusline#Count(bufnr(''))
+
+	let l:all_errors = l:counts.error + l:counts.style_error
+	let l:all_non_errors = l:counts.total - l:all_errors
+
+	let stat = l:counts.total == 0 ? '' : printf(
+				\   'ALE:  %d  %d',
+				\   all_non_errors,
+				\   all_errors
+				\)
+	return stat
+endfunction
 
 function! GoNearestMethod() abort
 	if !exists('b:vista_nearest_method_or_function')
@@ -39,9 +55,9 @@ command! GoNearestMethodC call GoNearestMethod()
 function! NearestMethodOrFunction() abort
 	if exists('b:vista_nearest_method_or_function')
 		if strlen(b:vista_nearest_method_or_function) <= 1
-		 	return ''
+			return ''
 		endif
-		return "\uf794:" . b:vista_nearest_method_or_function 
+		return "\uf794:" . b:vista_nearest_method_or_function
 	else
 		return  ''
 	endif
@@ -57,9 +73,9 @@ function! CocStatus_k() abort
 endfunction
 
 function! LightGitBranch() abort
-	let l:head = call('FugitiveHead', []) 
+	let l:head = call('FugitiveHead', [])
 	if len(l:head) > 0
-		return '  ' . l:head
+		return ' ' . l:head
 	else
 		return ''
 	endif

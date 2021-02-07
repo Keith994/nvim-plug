@@ -13,7 +13,7 @@ source ~/.config/nvim/which-key.vim
 source ~/.config/nvim/themes/oceanicnext.vim
 
 " source plug-config directory
-source ~/.config/nvim/plug-config/lightline.vim
+source ~/.config/nvim/plug-config/sharpenup.vim
 source ~/.config/nvim/plug-config/startify.vim
 source ~/.config/nvim/plug-config/GitGutter.vim
 source ~/.config/nvim/plug-config/Agit.vim
@@ -27,9 +27,6 @@ source ~/.config/nvim/plug-config/bullets.vim
 source ~/.config/nvim/plug-config/emmet.vim
 source ~/.config/nvim/plug-config/fzf.vim
 source ~/.config/nvim/plug-config/fzf-preview.vim
-source ~/.config/nvim/plug-config/vista.vim
-source ~/.config/nvim/plug-config/vista.vim
-source ~/.config/nvim/plug-config/ctrlp.vim
 source ~/.config/nvim/plug-config/vim-calendar.vim
 source ~/.config/nvim/plug-config/vim-go.vim
 source ~/.config/nvim/plug-config/AutoFormat.vim
@@ -45,3 +42,9 @@ source ~/.config/nvim/plug-config/fzf-ignore.vim
 source ~/.config/nvim/plug-config/vim-easymotion.vim
 source ~/.config/nvim/plug-config/vim-rooter.vim
 source ~/.config/nvim/plug-config/markdown-set.vim
+source ~/.config/nvim/plug-config/clever-f.vim
+source ~/.config/nvim/plug-config/vista.vim
+source ~/.config/nvim/plug-config/ale.vim
+source ~/.config/nvim/plug-config/lightline.vim
+" source ~/.config/nvim/plug-config/syntastic.vim
+" source ~/.config/nvim/plug-config/ctrlp.vim

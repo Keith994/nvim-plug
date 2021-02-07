@@ -52,9 +52,24 @@ let g:which_key_local_map['c'] = 'calender'
 let g:which_key_local_map['\'] = 'Clock'
 
 " ===
-" === Actions 相关
+" === Code linter
 " ===
 
+nmap <silent> <leader>cp <Plug>(ale_previous_wrap)
+nmap <silent> <leader>cn <Plug>(ale_next_wrap)
+nmap <slient> <leader>cf :AutoFromat<cr>
+nmap <silent> <leader>co :lopen<cr>
+let g:which_key_map['c'] = {
+			\ 'name': '+code',
+			\ 'p': 'ale-previous-wrap',
+			\ 'n': 'ale-next-wrap',
+			\ 'f': 'format',
+			\ 'o': 'errors-list',
+			\}
+
+" ===
+" === Actions 相关
+" ===
 
 function! s:show_documentation()
 	call CocActionAsync('highlight')
@@ -64,20 +79,21 @@ function! s:show_documentation()
 		call CocAction('doHover')
 	endif
 endfunction
-nnoremap <leader>dh :call <SID>show_documentation()<CR> 
+nnoremap <leader>dh :call <SID>show_documentation()<CR>
 
 "show help document
 let g:which_key_map.d = {
-		\ 'name' : '+document'  ,
-		\ 'h'    : 'show-helps' ,
-		\}
+			\ 'name' : '+document'  ,
+			\ 'h'    : 'show-helps' ,
+			\}
 
 " ===
 " === Git 相关
 " ===
+nnoremap <leader>gi :<c-u>CocList gitignore<cr>
 let g:which_key_map.g = {
 			\ 'name' : '+git',
-			\ 'i'    : ['FzfGitignore'         , 'create-ignore-file-using-template'] ,
+			\ 'i'    : 'create-ignore-file-using-template',
 			\ 'L'    : ['Agit'                 , 'agit-log-tool']                     ,
 			\ 'h'    : ['GitGutterNextHunk'    , 'git-next-hunk']                     ,
 			\ 'H'    : ['GitGutterPrevHunk'    , 'git-previous-hunk']                 ,
@@ -155,11 +171,26 @@ function Open_LazyGit()
 endfunction
 command! OpenLazyGit call Open_LazyGit()
 
+nnoremap <leader>ocl :<c-u>CocList<cr>
+nnoremap <leader>ocs :<c-u>CocList snippets<cr>
+nnoremap <leader>oce :<c-u>CocList extensions<cr>
+nnoremap <leader>ocm :<c-u>CocList marketplace<cr>
+nnoremap <leader>ock :<c-u>CocList maps<cr>
+nnoremap <leader>oct :<c-u>CocList tasks<cr>
 let g:which_key_map.o = {
 			\ 'name' : '+open'         ,
 			\ 't'    : ['OpenTerminal' , 'open-term'         ] ,
 			\ 'p'    : ['OpenExplorer' , 'open-file-sidebar' ] ,
 			\ 'l'    : ['OpenLazyGit'  , 'open-lazygit'      ] ,
+			\ 'c'    : {
+			\'name': '+CocList',
+			\ 'l' : 'OpenCocList',
+			\ 's' : 'snippets',
+			\ 'e' : 'extentions',
+			\ 'm' : 'marketplace',
+			\ 'k' : 'key-mappings',
+			\ 't' : 'tasks',
+			\}
 			\}
 
 " ===
@@ -195,10 +226,10 @@ let g:which_key_map.s = {
 			\ 's'       : 'current buffer'    ,
 			\ 'c'       : 'history command'   ,
 			\ 'g'       : {
-					\'name' : '+search-git'       ,
-					\'l'    : 'log'               ,
-					\'b'    : 'branch'            ,
-					\'f'    : 'git-files'         ,
-					\}
+			\'name' : '+search-git'       ,
+			\'l'    : 'log'               ,
+			\'b'    : 'branch'            ,
+			\'f'    : 'git-files'         ,
+			\}
 			\}
 

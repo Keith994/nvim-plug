@@ -75,8 +75,8 @@ cnoremap <M-b> <S-Left>
 cnoremap <M-w> <S-Right>
 
 " Space to Tab
-nnoremap <LocalLeader>tt :%s/    /\t/g
-vnoremap <localleader>tt :s/    /\t/g
+nnoremap <silent> <LocalLeader>tt :%s/    /\t/g<cr>
+vnoremap <silent> <localleader>tt :s/    /\t/g<cr>
 
 " Folding
 "noremap <silent> <LEADER>o za
@@ -256,7 +256,7 @@ autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 " === tabular
 " ===
 " 支持regex
-vmap ga :Tabularize /
+vmap gt :Tabularize /
 
 " ===
 " === suda.vim
@@ -353,6 +353,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 " Compile function
 noremap <LEADER>r :call CompileRunGcc()<CR>
+let g:mkdp_browser="chromium"
 func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
@@ -391,5 +392,9 @@ func! CompileRunGcc()
 		set splitbelow
 		:sp
 		:term go run .
+	elseif &filetype == 'cs'
+		set splitbelow
+		:sp
+		:term dotnet run
 	endif
 endfunc
