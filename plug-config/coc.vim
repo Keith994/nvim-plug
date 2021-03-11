@@ -2,11 +2,11 @@
 " === coc.nvim
 " ===
 let g:coc_global_extensions = [
+			\ 'coc-java',
+			\ 'coc-java-debug',
 			\ 'coc-css',
 			\ 'coc-diagnostic',
 			\ 'coc-explorer',
-			\ 'coc-flutter-tools',
-			\ 'coc-flutter',
 			\ 'coc-gitignore',
 			\ 'coc-html',
 			\ 'coc-json',
@@ -23,11 +23,13 @@ let g:coc_global_extensions = [
 			\ 'coc-tslint-plugin',
 			\ 'coc-tsserver',
 			\ 'coc-vimlsp',
+			\ 'coc-json',
 			\ 'coc-vetur',
 			\ 'coc-yaml',
 			\ 'coc-yank',
 			\ 'coc-marketplace',
-			\ 'coc-fzf-preview']
+			\ 'coc-fzf-preview',
+			\ 'coc-emoji']
 
 " 代码提示选择，使用<TAB>键
 inoremap <silent><expr> <TAB>

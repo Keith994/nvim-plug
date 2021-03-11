@@ -9,7 +9,7 @@ let g:fzf_preview_directory_files_command = 'rg --files --hidden --follow --no-m
 " fzf window position settings
 let g:fzf_preview_direct_window_option ='' 
 " floating window size ratio
-let g:fzf_preview_floating_window_rate = 0.5
+let g:fzf_preview_floating_window_rate = 0.8
 " Limit of the number of files to be saved by mru
 let g:fzf_preview_mru_limit = 100
 "let g:fzf_preview_fzf_preview_window_option = 'down:30%'

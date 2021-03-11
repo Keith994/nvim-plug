@@ -14,49 +14,50 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " 主题插件
-Plug 'bling/vim-bufferline'
-Plug 'theniceboy/vim-deus'    "  颜色主题
-Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'hardcoreplayers/oceanic-material'
-" Plug 'mhartington/oceanic-next'
 " Status line
-Plug 'itchyny/lightline.vim' " 配合oceanic主题颜色使用
+Plug 'itchyny/lightline.vim'
 " General Highlighter
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' } " 颜色显示
 Plug 'RRethy/vim-illuminate' "自动突出显示光标下当前单词的其他用法
 " File navigation
 Plug 'junegunn/fzf.vim', {'do': {-> fzf#install()}} " 模糊搜索
 Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/rpc' }
-Plug 'kevinhwang91/rnvimr'  " Ranger
-Plug 'airblade/vim-rooter'  " 打开文件或目录时，Rooter会将工作目录更改为项目根目录。
-Plug 'pechorin/any-jump.vim' " 光标下的变量自动跳转
+" Ranger
+Plug 'kevinhwang91/rnvimr'
+" 打开文件或目录时，Rooter会将工作目录更改为项目根目录。
+Plug 'airblade/vim-rooter'  
+" 光标下的变量自动跳转
+Plug 'pechorin/any-jump.vim' 
 " Taglist
-Plug 'liuchengxu/vista.vim' " 在Vim / NeoVim中查看和搜索LSP符号，标签
+Plug 'liuchengxu/vista.vim'
 " Debugger
 Plug 'puremourning/vimspector', {'do': './install_gadget.py --enable-c --enable-python --enable-go'}  " Vim的多语言图形调试器
 " Syntax Checker
 Plug 'dense-analysis/ale'
-" Plug 'vim-syntastic/syntastic'
 " Syntax Highlight
 Plug 'sheerun/vim-polyglot'
+Plug 'jlcrochet/vim-razor'
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Snippets
-Plug 'theniceboy/vim-snippets' " 代码片断
-" Undo Tree
-Plug 'mbbill/undotree' " undo树，可视化重做
+Plug 'theniceboy/vim-snippets' 
+" Undo Tree  undo树，可视化重做
+Plug 'mbbill/undotree'
 " Git
+" gitignore templates
 Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
-" Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }
-Plug 'airblade/vim-gitgutter' " 在sign列中显示git diff。
-Plug 'cohama/agit.vim' " git日志查看
-Plug 'tpope/vim-fugitive' " 命令行git
+" 在sign列中显示git diff。
+Plug 'airblade/vim-gitgutter' 
+" git日志查看
+Plug 'cohama/agit.vim' 
+" 命令行git
+Plug 'tpope/vim-fugitive' 
 " Autoformat
 Plug 'Chiel92/vim-autoformat'
 " CSharp
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'nickspoons/vim-sharpenup'
-" Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] } " omnisharp-vim dependency
 " HTML, CSS, JavaScript, Typescript, PHP, JSON, etc.
 Plug 'othree/html5.vim' " HTML5 +内联SVG全功能，Vim的缩进和语法。
 Plug 'alvan/vim-closetag' " 自动关闭（X）HTML标签
@@ -104,13 +105,14 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'wesQ3/vim-windowswap' " move window <leader>ww
 " Vim Applications
 Plug 'itchyny/calendar.vim'
-" Other visual enhancement
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'mg979/vim-xtabline' " 标签栏
-Plug 'wincent/terminus' " 终端
 " file icons
 Plug 'ryanoasis/vim-devicons' 
 Plug 'kyazdani42/nvim-web-devicons'
+" Other visual enhancement
+Plug 'kien/rainbow_parentheses.vim'
+" Plug 'mg979/vim-xtabline' " 标签栏
+Plug 'romgrk/barbar.nvim'
+Plug 'wincent/terminus' " 终端
 " Other useful utilities
 Plug 'lambdalisue/suda.vim' " 添加sudo操作 do stuff like :sudowrite
 "Plug 'xolox/vim-session'

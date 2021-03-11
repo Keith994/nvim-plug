@@ -82,7 +82,8 @@ vnoremap <silent> <localleader>tt :s/    /\t/g<cr>
 "noremap <silent> <LEADER>o za
 
 " 显示当前路径
-noremap \p i<c-r>=expand('%:p')<CR> <ESC>
+" noremap \p i<c-r>=expand('%:p')<CR> <ESC>
+noremap \p :echo expand('%:p')<CR>
 
 " term 设置
 let g:neoterm_autoscroll = 1
@@ -109,10 +110,10 @@ noremap <C-e> 3<C-e>
 noremap <silent> <leader>bd :bd<CR>
 noremap <silent> <leader>bk :BD<CR>
 noremap <silent> <leader>bb :Buffers<CR>
-noremap <silent> <leader>bp :bprevious<CR>
-noremap <silent> <leader>bn :bnext<CR>
-noremap <silent> <leader>bf :bfirst<CR>
-noremap <silent> <leader>bl :blast<CR>
+noremap <silent> <leader>bp :BufferPrevious<CR>
+noremap <silent> <leader>bn :BufferNext<CR>
+noremap <silent> <leader>bf :BufferGoto 1<CR>
+noremap <silent> <leader>bl :BufferLast<CR>
 noremap <silent> <leader>bN :new<CR>
 
 function! s:list_buffers()
@@ -195,14 +196,30 @@ nmap tt :CocCommand explorer<CR>
 nmap ts <Plug>(coc-translator-p)
 
 " ===
-" === 标签页管理
+" === 标签页管理-barbar.nvim
 " ===
 noremap tn :tabe<CR>
-noremap th :-tabnext<CR>
-noremap tl :+tabnext<CR>
-noremap tmh :-tabmove<CR>
-noremap tml :+tabmove<CR>
-
+noremap th :BufferPrevious<CR>
+noremap tl :BufferNext<CR>
+noremap tmh :BufferMovePrevious<CR>
+noremap tml :BufferMoveNext<CR>
+" 类似于EasyMotion选择
+noremap tp :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> tod :BufferOrderByDirectory<CR>
+nnoremap <silent> tol :BufferOrderByLanguage<CR>
+" Close commands
+nnoremap tc :BufferClose<CR>
+nnoremap tC :BufferCloseAllButCurrent<CR>
+nnoremap tH :BufferCloseBuffersLeft<CR>
+nnoremap tL :BufferCloseBuffersRight<CR>
+" Goto buffer in position 1-9
+function s:MapBK()
+	for i in range(1,9)
+		execute 'noremap t'.i.' :BufferGoto '.i.'<CR>'
+	endfor
+endfunction
+call s:MapBK()
 
 " ===
 " === Undotree
@@ -311,6 +328,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " 重命名变量
 nmap <silent> gR <Plug>(coc-rename)
+" CocAction
+nmap <silent> ga :CocAction<CR>
 
 " coctodolist
 "" CocTodoList创建
@@ -328,11 +347,11 @@ nnoremap <c-c>							:CocCommand<CR>
 "nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
 
 " Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-	execute 'CocCommand actions.open ' . a:type
-endfunction
-" xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-" nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+" function! s:cocActionsOpenFromSelected(type) abort
+" 	execute 'CocCommand actions.open ' . a:type
+" endfunction
+" xmap <silent> ga :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+" nmap <silent> ga :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 " coc-snippets
 " Snippets
 " Use <C-l> for trigger snippet expand.
