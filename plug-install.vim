@@ -13,6 +13,8 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+" 二进制编辑
+Plug 'rootkiter/vim-hexedit'
 " 主题插件
 Plug 'hardcoreplayers/oceanic-material'
 " Status line
